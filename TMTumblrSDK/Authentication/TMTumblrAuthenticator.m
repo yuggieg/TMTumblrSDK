@@ -115,8 +115,8 @@ NSDictionary *formEncodedDataToDictionary(NSData *data);
         } else {
             TMWebViewController *controller = [[TMWebViewController alloc] initWithURL:authURL];
             controller.delegate = self;
-            authController.modalPresentationStyle = UIModalPresentationFormSheet;
             authController = [[UINavigationController alloc] initWithRootViewController:controller];
+            authController.modalPresentationStyle = UIModalPresentationFormSheet;
         }
         [fromViewController presentViewController:authController animated:YES completion:NULL];
     } authCallback:^(NSString *token, NSString *secret, NSError *error) {
